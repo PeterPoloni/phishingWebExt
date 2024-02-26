@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Phishing detection2",
+  "description": "This extension scans HTML of a web page and tries to detect phishing activity",
+  "version": "1.0.0",
+  "icons": {
+    "128": "icons/phishlogo.drawio.png"
+  },
+  "action": {
+    "default_icon": "icons/phishlogo.drawio.png",
+    "default_title": "Phishing detection"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab","nativeMessaging"
+  ]
+}
